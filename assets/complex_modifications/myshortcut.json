@@ -691,7 +691,7 @@
                             "type": "frontmost_application_if"
                         }
                     ],
-                    "description": "hyper + u =  ctrl + a (Terminal home)",
+                    "description": "hyper + u =  fn + left (Terminal home)",
                     "from": {
                         "key_code": "u",
                         "modifiers": {
@@ -705,9 +705,9 @@
                     },
                     "to": [
                         {
-                            "key_code": "a",
+                            "key_code": "left",
                             "modifiers": [
-                                "left_control"
+                                "fn"
                             ]
                         }
                     ],
@@ -767,7 +767,7 @@
                             "type": "frontmost_application_if"
                         }
                     ],
-                    "description": "hyper + o =  ctrl + e (Terminal end)",
+                    "description": "hyper + o = fn + right (Terminal end)",
                     "from": {
                         "key_code": "o",
                         "modifiers": {
@@ -781,9 +781,9 @@
                     },
                     "to": [
                         {
-                            "key_code": "e",
+                            "key_code": "right_arrow",
                             "modifiers": [
-                                "left_control"
+                                "fn"
                             ]
                         }
                     ],
