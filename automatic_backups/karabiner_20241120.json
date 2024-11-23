@@ -5,6 +5,62 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "keys to Control when Teamviewer",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.teamviewer.TeamViewer"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "description": "capslock to ctrl when teamviewer ",
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "right_control" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.teamviewer.TeamViewer"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "description": "right cmd to right ctrl when TeamViewer",
+                                "from": {
+                                    "key_code": "right_command",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "right_control" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.teamviewer.TeamViewer"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "description": "left cmd to left ctrl when TeamViewer",
+                                "from": {
+                                    "key_code": "left_command",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "left_control" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "CapsLock to Hyper",
                         "manipulators": [
                             {
@@ -30,7 +86,7 @@
                                 "to_if_alone": [
                                     {
                                         "key_code": "spacebar",
-                                        "modifiers": ["left_control", "left_command"]
+                                        "modifiers": ["left_control"]
                                     }
                                 ],
                                 "type": "basic"
@@ -61,7 +117,7 @@
                                 "to": [
                                     {
                                         "key_code": "spacebar",
-                                        "modifiers": ["left_control", "left_command"]
+                                        "modifiers": ["left_control"]
                                     }
                                 ],
                                 "type": "basic"
@@ -104,7 +160,7 @@
                         "description": "Hyper Navigation",
                         "manipulators": [
                             {
-                                "description": "hyper + shift + h = shift + left",
+                                "description": "shift + h = shift + left",
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": { "mandatory": ["left_shift", "right_command", "right_control", "right_shift", "right_option"] }
@@ -118,7 +174,7 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "hyper + option + shift + h = option + shift + left (select word ahead)",
+                                "description": "option + shift + h = option + shift + left (select word ahead)",
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": { "mandatory": ["left_option", "left_shift", "right_command", "right_control", "right_shift", "right_option"] }
@@ -132,7 +188,7 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "hyper + cmd + shift + h = option + shift + left (select word ahead)",
+                                "description": "cmd + shift + h = option + shift + left (select word ahead)",
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": { "mandatory": ["left_command", "left_shift", "right_command", "right_control", "right_shift", "right_option"] }
@@ -140,13 +196,13 @@
                                 "to": [
                                     {
                                         "key_code": "left_arrow",
-                                        "modifiers": ["left_command", "left_shift"]
+                                        "modifiers": ["left_option", "left_shift"]
                                     }
                                 ],
                                 "type": "basic"
                             },
                             {
-                                "description": "hyper + command + h =  ctrl + shift + tab (prev tab)",
+                                "description": "command + h =  ctrl + shift + tab (prev tab)",
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": { "mandatory": ["left_command", "right_command", "right_control", "right_shift", "right_option"] }
@@ -160,7 +216,7 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "hyper + control + h = ctrl + left (prev desktop)",
+                                "description": "control + h = ctrl + left (prev desktop)",
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": { "mandatory": ["left_control", "right_command", "right_control", "right_shift", "right_option"] }
@@ -183,7 +239,7 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "hyper + shift + j = shift + down",
+                                "description": "shift + j = shift + down",
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": { "mandatory": ["left_shift", "right_command", "right_control", "right_shift", "right_option"] }
@@ -197,7 +253,7 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "hyper + option + shift + j = option + shift + down (duplicate and paste below)",
+                                "description": "option + shift + j = option + shift + down (duplicate and paste below)",
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": { "mandatory": ["left_option", "left_shift", "right_command", "right_control", "right_shift", "right_option"] }
@@ -211,7 +267,21 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "hyper + control + j = ctrl + down (focus application)",
+                                "description": "command + j = control down focus app",
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": { "mandatory": ["left_command", "right_command", "right_control", "right_shift", "right_option"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "down_arrow",
+                                        "modifiers": ["left_control"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "control + j = ctrl + down (focus application)",
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": { "mandatory": ["left_control", "right_command", "right_control", "right_shift", "right_option"] }
@@ -234,7 +304,7 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "hyper + shift + k = shift + up",
+                                "description": "shift + k = shift + up",
                                 "from": {
                                     "key_code": "k",
                                     "modifiers": { "mandatory": ["left_shift", "right_command", "right_control", "right_shift", "right_option"] }
@@ -248,7 +318,7 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "hyper + option + shift + k = option + shift + up (copy line)",
+                                "description": "option + shift + k = option + shift + up (copy line)",
                                 "from": {
                                     "key_code": "k",
                                     "modifiers": { "mandatory": ["left_option", "left_shift", "right_command", "right_control", "right_shift", "right_option"] }
@@ -262,7 +332,21 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "hyper + control + k = ctrl + up (expose all)",
+                                "description": "command + k = control up expose all",
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": { "mandatory": ["left_command", "right_command", "right_control", "right_shift", "right_option"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "up_arrow",
+                                        "modifiers": ["left_control"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "control + k = ctrl + up (expose all)",
                                 "from": {
                                     "key_code": "k",
                                     "modifiers": { "mandatory": ["left_control", "right_command", "right_control", "right_shift", "right_option"] }
@@ -285,7 +369,7 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "hyper + shift + l = shift + right",
+                                "description": "shift + l = shift + right",
                                 "from": {
                                     "key_code": "l",
                                     "modifiers": { "mandatory": ["left_shift", "right_command", "right_control", "right_shift", "right_option"] }
@@ -299,7 +383,7 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "hyper + option + shift + l = option + shift + right (select word after)",
+                                "description": "option + shift + l = option + shift + right (select word after)",
                                 "from": {
                                     "key_code": "l",
                                     "modifiers": { "mandatory": ["left_option", "left_shift", "right_command", "right_control", "right_shift", "right_option"] }
@@ -313,7 +397,7 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "hyper + cmd + shift + l = option + shift + right (select word after)",
+                                "description": "cmd + shift + l = option + shift + right (select word after)",
                                 "from": {
                                     "key_code": "l",
                                     "modifiers": { "mandatory": ["left_command", "left_shift", "right_command", "right_control", "right_shift", "right_option"] }
@@ -327,7 +411,7 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "hyper + command + l = command + right_arrow",
+                                "description": "command + l = command + right_arrow",
                                 "from": {
                                     "key_code": "l",
                                     "modifiers": { "mandatory": ["left_command", "right_command", "right_control", "right_shift", "right_option"] }
@@ -341,7 +425,7 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "hyper + control + l = ctrl + right (next desktop)",
+                                "description": "control + l = ctrl + right (next desktop)",
                                 "from": {
                                     "key_code": "l",
                                     "modifiers": { "mandatory": ["left_control", "right_command", "right_control", "right_shift", "right_option"] }
@@ -364,7 +448,21 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "hyper + y = page_up",
+                                "description": "control + f = ctrl + command + f (fullscreen)",
+                                "from": {
+                                    "key_code": "f",
+                                    "modifiers": { "mandatory": ["left_command", "right_command", "right_control", "right_shift", "right_option"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "f",
+                                        "modifiers": ["left_control", "left_command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": " y = page_up",
                                 "from": {
                                     "key_code": "y",
                                     "modifiers": { "mandatory": ["right_command", "right_control", "right_shift", "right_option"] }
@@ -373,7 +471,7 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "hyper + shift + u = shift + home",
+                                "description": " shift + u = shift + home",
                                 "from": {
                                     "key_code": "u",
                                     "modifiers": { "mandatory": ["left_shift", "right_command", "right_control", "right_shift", "right_option"] }
@@ -396,7 +494,7 @@
                                         "type": "frontmost_application_if"
                                     }
                                 ],
-                                "description": "hyper + u =  ctrl + a (Terminal home)",
+                                "description": " u =  ctrl + a (Terminal home)",
                                 "from": {
                                     "key_code": "u",
                                     "modifiers": { "mandatory": ["right_command", "right_control", "right_shift", "right_option"] }
@@ -410,16 +508,21 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "hyper + u = home",
+                                "description": " u = home",
                                 "from": {
                                     "key_code": "u",
                                     "modifiers": { "mandatory": ["right_command", "right_control", "right_shift", "right_option"] }
                                 },
-                                "to": [{ "key_code": "home" }],
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
-                                "description": "hyper + shift + o = shift + end",
+                                "description": "shift + o = shift + end",
                                 "from": {
                                     "key_code": "o",
                                     "modifiers": { "mandatory": ["left_shift", "right_command", "right_control", "right_shift", "right_option"] }
@@ -442,7 +545,7 @@
                                         "type": "frontmost_application_if"
                                     }
                                 ],
-                                "description": "hyper + o =  ctrl + e (Terminal end)",
+                                "description": " o =  ctrl + e (Terminal home)",
                                 "from": {
                                     "key_code": "o",
                                     "modifiers": { "mandatory": ["right_command", "right_control", "right_shift", "right_option"] }
@@ -456,16 +559,21 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "hyper + o = end",
+                                "description": " o =  end",
                                 "from": {
                                     "key_code": "o",
                                     "modifiers": { "mandatory": ["right_command", "right_control", "right_shift", "right_option"] }
                                 },
-                                "to": [{ "key_code": "end" }],
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
-                                "description": "hyper + n = page_down",
+                                "description": " n = page_down",
                                 "from": {
                                     "key_code": "n",
                                     "modifiers": { "mandatory": ["right_command", "right_control", "right_shift", "right_option"] }
