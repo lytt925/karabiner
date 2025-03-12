@@ -705,7 +705,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "left",
+                            "key_code": "left_arrow",
                             "modifiers": [
                                 "fn"
                             ]
@@ -728,7 +728,10 @@
                     },
                     "to": [
                         {
-                            "key_code": "home"
+                            "key_code": "left_arrow",
+                            "modifiers": [
+                                "right_command"
+                            ]   
                         }
                     ],
                     "type": "basic"
@@ -804,7 +807,10 @@
                     },
                     "to": [
                         {
-                            "key_code": "end"
+                            "key_code": "right_arrow",
+                            "modifiers": [
+                                "right_command"
+                            ]
                         }
                     ],
                     "type": "basic"
@@ -881,7 +887,7 @@
                     "type": "basic"
                 },
                 {
-                    "description": "hyper + x = cmd + x",
+                    "description": "capslock + x = control + x",
                     "from": {
                         "key_code": "x",
                         "modifiers": {
@@ -896,29 +902,6 @@
                     "to": [
                         {
                             "key_code": "x",
-                            "modifiers": [
-                                "right_command"
-                            ]
-                        }
-                    ],
-                    "type": "basic"
-                },
-                {
-                    "description": "capslock + a = cmd + a",
-                    "from": {
-                        "key_code": "a",
-                        "modifiers": {
-                            "mandatory": [
-                                "right_command",
-                                "right_control",
-                                "right_shift",
-                                "right_option"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "a",
                             "modifiers": [
                                 "right_control"
                             ]
