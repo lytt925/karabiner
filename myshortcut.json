@@ -691,7 +691,39 @@
                             "type": "frontmost_application_if"
                         }
                     ],
-                    "description": "hyper + u =  fn + left (Terminal home)",
+                    "description": "hyper + u =  ctrl + a (Terminal home)",
+                    "from": {
+                        "key_code": "u",
+                        "modifiers": {
+                            "mandatory": [
+                                "right_command",
+                                "right_control",
+                                "right_shift",
+                                "right_option"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "a",
+                            "modifiers": [
+                                "right_control"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "bundle_identifiers": [
+                                "^com\\.anytype\\.anytype$",
+                                "^com\\.microsoft\\.edgemac$"
+                            ],
+                            "type": "frontmost_application_if"
+                        }
+                    ],
+                    "description": "hyper + u = cmd + left (Anytype/Edge home)",
                     "from": {
                         "key_code": "u",
                         "modifiers": {
@@ -707,7 +739,7 @@
                         {
                             "key_code": "left_arrow",
                             "modifiers": [
-                                "fn"
+                                "right_command"
                             ]
                         }
                     ],
@@ -728,10 +760,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "left_arrow",
-                            "modifiers": [
-                                "right_command"
-                            ]   
+                            "key_code": "home"
                         }
                     ],
                     "type": "basic"
@@ -770,7 +799,39 @@
                             "type": "frontmost_application_if"
                         }
                     ],
-                    "description": "hyper + o = fn + right (Terminal end)",
+                    "description": "hyper + o = ctrl + e (Terminal end)",
+                    "from": {
+                        "key_code": "o",
+                        "modifiers": {
+                            "mandatory": [
+                                "right_command",
+                                "right_control",
+                                "right_shift",
+                                "right_option"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "e",
+                            "modifiers": [
+                                "right_control"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "bundle_identifiers": [
+                                "^com\\.anytype\\.anytype$",
+                                "^com\\.microsoft\\.edgemac$"
+                            ],
+                            "type": "frontmost_application_if"
+                        }
+                    ],
+                    "description": "hyper + o = cmd + right (Anytype/Edge end)",
                     "from": {
                         "key_code": "o",
                         "modifiers": {
@@ -786,7 +847,7 @@
                         {
                             "key_code": "right_arrow",
                             "modifiers": [
-                                "fn"
+                                "right_command"
                             ]
                         }
                     ],
@@ -807,10 +868,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "right_arrow",
-                            "modifiers": [
-                                "right_command"
-                            ]
+                            "key_code": "end"
                         }
                     ],
                     "type": "basic"
@@ -887,7 +945,7 @@
                     "type": "basic"
                 },
                 {
-                    "description": "capslock + x = control + x",
+                    "description": "hyper + x = cmd + x",
                     "from": {
                         "key_code": "x",
                         "modifiers": {
@@ -902,6 +960,29 @@
                     "to": [
                         {
                             "key_code": "x",
+                            "modifiers": [
+                                "right_command"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "description": "capslock + a = cmd + a",
+                    "from": {
+                        "key_code": "a",
+                        "modifiers": {
+                            "mandatory": [
+                                "right_command",
+                                "right_control",
+                                "right_shift",
+                                "right_option"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "a",
                             "modifiers": [
                                 "right_control"
                             ]
