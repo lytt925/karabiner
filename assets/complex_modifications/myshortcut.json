@@ -93,8 +93,7 @@
           },
           "to": [
             {
-              "key_code": "spacebar",
-              "modifiers": ["left_control", "left_option"]
+              "key_code": "caps_lock"
             }
           ],
           "type": "basic"
@@ -583,9 +582,9 @@
           "type": "basic"
         },
         {
-          "description": "hyper + y = page_up",
+          "description": "hyper + i = page_up",
           "from": {
-            "key_code": "y",
+            "key_code": "i",
             "modifiers": {
               "mandatory": [
                 "right_command",
@@ -706,9 +705,9 @@
           "type": "basic"
         },
         {
-          "description": "hyper + shift + o = shift + end",
+          "description": "hyper + shift + m = shift + end",
           "from": {
-            "key_code": "o",
+            "key_code": "m",
             "modifiers": {
               "mandatory": [
                 "left_shift",
@@ -737,9 +736,9 @@
               "type": "frontmost_application_if"
             }
           ],
-          "description": "hyper + o = ctrl + e (Terminal end)",
+          "description": "hyper + m = ctrl + e (Terminal end)",
           "from": {
-            "key_code": "o",
+            "key_code": "m",
             "modifiers": {
               "mandatory": [
                 "right_command",
@@ -768,9 +767,9 @@
               "type": "frontmost_application_if"
             }
           ],
-          "description": "hyper + o = cmd + right (Anytype/Edge end/ Chrome end)",
+          "description": "hyper + m = cmd + right (Anytype/Edge end/ Chrome end)",
           "from": {
-            "key_code": "o",
+            "key_code": "m",
             "modifiers": {
               "mandatory": [
                 "right_command",
@@ -789,9 +788,9 @@
           "type": "basic"
         },
         {
-          "description": "hyper + o = end",
+          "description": "hyper + m = end",
           "from": {
-            "key_code": "o",
+            "key_code": "m",
             "modifiers": {
               "mandatory": [
                 "right_command",
@@ -809,9 +808,9 @@
           "type": "basic"
         },
         {
-          "description": "hyper + n = page_down",
+          "description": "hyper + comma = page_down",
           "from": {
-            "key_code": "n",
+            "key_code": "comma",
             "modifiers": {
               "mandatory": [
                 "right_command",
